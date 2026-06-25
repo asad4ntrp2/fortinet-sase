@@ -27,6 +27,8 @@
 | **SPA** — Secure Private Access | Reach private apps via **ZTNA** (per-app) or **SD-WAN hub** (broad/legacy) |
 | **Secure SaaS Access** | Inline + API **CASB** to govern sanctioned & shadow SaaS |
 
+**Sovereign SASE:** for data-residency, government, defense and regulated needs, the *same* FortiOS stack can be deployed under your control — **Fortinet-hosted** (standard), **service-provider-hosted** (in-country, locally managed), or **fully self-hosted** (your own DC / private cloud / air-gapped) — so traffic, logs and keys never leave the chosen jurisdiction.
+
 **Commercial model:** licensed **per user, per year**, bundled by edition tier, with **site (thin-edge)** and **private-access bandwidth** as the main capacity add-ons — shifting spend from per-site CapEx to predictable OpEx while consolidating separate SWG/CASB/ZTNA/VPN point-products into one vendor.
 
 ---
@@ -41,12 +43,13 @@
 | 4 | **Reference Architecture** | **Fig 2: on-ramps → PoP stack → destinations** |
 | 5 | **Service Connectivity** | **Fig 3: SIA / SPA / Secure SaaS** paths |
 | 6 | **Datacenter Connectivity** | **Fig 4: SD-WAN hub vs ZTNA proxy** + comparison |
-| 7 | Feature Matrix | Capability → product → SASE pillar |
-| 8 | **Licensing Model** | **Fig 5: base subscription + edition tiers + add-ons** |
-| 9 | **Costing Model** | Cost components + worked 1,000-user example |
-| 10 | Core Use Cases | Six primary deployment patterns |
-| 11 | **Industry Blueprints** | **Fig 6: industry map** + 6-industry table + deep-dives |
-| 12 | Summary & Glossary | One-paragraph summary + term reference |
+| 7 | **Sovereign SASE** | Data sovereignty + **Fig 5: deployment spectrum** (Fortinet / SP / self-hosted) |
+| 8 | Feature Matrix | Capability → product → SASE pillar |
+| 9 | **Licensing Model** | **Fig 6: base subscription + edition tiers + add-ons** |
+| 10 | **Costing Model** | Cost components + worked 1,000-user example |
+| 11 | Core Use Cases | Six primary deployment patterns |
+| 12 | **Industry Blueprints** | **Fig 7: industry map** + 6-industry table + deep-dives |
+| 13 | Summary & Glossary | One-paragraph summary + term reference |
 
 **Products covered:** FortiSASE PoP · FWaaS/NGFW · SWG · ZTNA · CASB · DLP · inline Sandbox · IPS · DEM · FortiGate (Secure SD-WAN) · FortiClient + EMS · FortiExtender · FortiAP / FortiSwitch (Thin-Edge) · FortiManager · FortiAnalyzer · FortiGuard Labs.
 

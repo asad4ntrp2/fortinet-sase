@@ -114,14 +114,15 @@
   <a href="#arch">4 · Reference Architecture</a>
   <a href="#services">5 · Service Connectivity</a>
   <a href="#datacenter">6 · Datacenter Connectivity</a>
-  <a href="#features">7 · Feature Matrix</a>
+  <a href="#sovereign">7 · Sovereign SASE</a>
+  <a href="#features">8 · Feature Matrix</a>
   <div class="grp">Commercial</div>
-  <a href="#licensing">8 · Licensing Model</a>
-  <a href="#costing">9 · Costing Model</a>
+  <a href="#licensing">9 · Licensing Model</a>
+  <a href="#costing">10 · Costing Model</a>
   <div class="grp">Use Cases</div>
-  <a href="#usecases">10 · Core Use Cases</a>
-  <a href="#industries">11 · Industry Blueprints</a>
-  <a href="#summary">12 · Summary &amp; Glossary</a>
+  <a href="#usecases">11 · Core Use Cases</a>
+  <a href="#industries">12 · Industry Blueprints</a>
+  <a href="#summary">13 · Summary &amp; Glossary</a>
 </nav>
 
 <!-- ============ MAIN ============ -->
@@ -136,6 +137,7 @@
   <span class="pill">ZTNA</span>
   <span class="pill">SD-WAN</span>
   <span class="pill">FWaaS · SWG · CASB · DLP · IPS · DEM</span>
+  <span class="pill">Sovereign SASE (self / SP-hosted)</span>
   <span class="pill">Per-user subscription licensing</span>
 </header>
 
@@ -444,9 +446,119 @@
   <div class="note ok"><b>Recommended:</b> deploy both. Use ZTNA as the default for new/web apps (true zero trust), and the SD-WAN hub for legacy systems and bulk site connectivity. Both ride the same FortiSASE per-user license.</div>
 </section>
 
-<!-- 7 FEATURES -->
+<!-- 7 SOVEREIGN SASE -->
+<section id="sovereign">
+  <h2 class="sec"><span class="n">7</span>Sovereign SASE — Data Sovereignty &amp; Deployment Control</h2>
+  <p class="lead"><b>Sovereign SASE</b> gives an organization full control over <b>where the SASE security stack runs</b> and <b>where its traffic, logs and inspection happen</b> — keeping data inside a chosen jurisdiction or entirely under the organization's own control, instead of inside vendor-operated, vendor-located shared cloud PoPs. It is the answer to data-residency laws and the needs of governments, defense, and critical-infrastructure operators.</p>
+
+  <div class="note info"><b>The core idea:</b> standard cloud SASE routes your traffic, logs and metadata through the <b>vendor's</b> multi-tenant PoPs in <b>vendor-chosen</b> countries. Sovereign SASE lets you move that enforcement and data into your jurisdiction — or fully onto your own infrastructure — <b>without changing the security stack</b>, because every form factor runs the same FortiOS.</div>
+
+  <h3 class="sub">The deployment spectrum — same stack, three sovereignty levels</h3>
+  <div class="diagram">
+  <svg viewBox="0 0 1180 430" role="img" aria-label="Sovereign SASE deployment spectrum">
+    <defs>
+      <linearGradient id="sov" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#0a5fb4"/><stop offset="0.5" stop-color="#6a3fb4"/><stop offset="1" stop-color="#da291c"/></linearGradient>
+      <marker id="sa" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#15181d"/></marker>
+    </defs>
+
+    <text x="590" y="28" text-anchor="middle" font-size="14" font-weight="700" fill="#15181d">One FortiOS Security Stack → Three Hosting Models</text>
+
+    <!-- Model 1 -->
+    <rect x="30" y="55" width="355" height="225" rx="12" fill="#f1f7fd" stroke="#0a5fb4" stroke-width="2"/>
+    <rect x="30" y="55" width="355" height="36" rx="12" fill="#0a5fb4"/>
+    <text x="207" y="79" text-anchor="middle" font-size="13.5" font-weight="700" fill="#fff">① Fortinet-Hosted</text>
+    <text x="207" y="112" text-anchor="middle" font-size="11.5" font-weight="600" fill="#0a5fb4">Standard FortiSASE</text>
+    <g font-size="11" fill="#3a4250">
+      <text x="50" y="140">• Vendor-operated global PoPs</text>
+      <text x="50" y="164">• Fortinet chooses locations</text>
+      <text x="50" y="188">• Fastest to deploy, global reach</text>
+      <text x="50" y="212">• Fortinet manages everything</text>
+      <text x="50" y="236">• Data resides in vendor cloud</text>
+    </g>
+    <text x="207" y="266" text-anchor="middle" font-size="10.5" font-style="italic" fill="#0a5fb4">Best for: convenience &amp; speed</text>
+
+    <!-- Model 2 -->
+    <rect x="412" y="55" width="355" height="225" rx="12" fill="#f8f6fd" stroke="#6a3fb4" stroke-width="2"/>
+    <rect x="412" y="55" width="355" height="36" rx="12" fill="#6a3fb4"/>
+    <text x="589" y="79" text-anchor="middle" font-size="13.5" font-weight="700" fill="#fff">② Service-Provider-Hosted</text>
+    <text x="589" y="112" text-anchor="middle" font-size="11.5" font-weight="600" fill="#6a3fb4">Managed Sovereign SASE</text>
+    <g font-size="11" fill="#3a4250">
+      <text x="432" y="140">• Regional MSSP / telco hosts PoP</text>
+      <text x="432" y="164">• Deployed &amp; kept in-country</text>
+      <text x="432" y="188">• Local provider operates &amp; supports</text>
+      <text x="432" y="212">• Data stays within national borders</text>
+      <text x="432" y="236">• Local SLAs, local language &amp; billing</text>
+    </g>
+    <text x="589" y="266" text-anchor="middle" font-size="10.5" font-style="italic" fill="#6a3fb4">Best for: in-country compliance + managed</text>
+
+    <!-- Model 3 -->
+    <rect x="794" y="55" width="355" height="225" rx="12" fill="#fff5f4" stroke="#da291c" stroke-width="2"/>
+    <rect x="794" y="55" width="355" height="36" rx="12" fill="#da291c"/>
+    <text x="971" y="79" text-anchor="middle" font-size="13.5" font-weight="700" fill="#fff">③ Self-Hosted</text>
+    <text x="971" y="112" text-anchor="middle" font-size="11.5" font-weight="600" fill="#a81d13">Full Sovereign</text>
+    <g font-size="11" fill="#3a4250">
+      <text x="814" y="140">• Org runs the stack itself</text>
+      <text x="814" y="164">• Own DC / local / private cloud</text>
+      <text x="814" y="188">• Supports air-gapped / isolated</text>
+      <text x="814" y="212">• Full control of logs &amp; keys</text>
+      <text x="814" y="236">• Control what threat-intel leaves</text>
+    </g>
+    <text x="971" y="266" text-anchor="middle" font-size="10.5" font-style="italic" fill="#a81d13">Best for: defense, gov, total control</text>
+
+    <!-- spectrum bar -->
+    <rect x="30" y="320" width="1119" height="16" rx="8" fill="url(#sov)"/>
+    <line x1="30" y1="360" x2="1149" y2="360" stroke="#15181d" stroke-width="1.5" marker-end="url(#sa)"/>
+    <text x="40" y="356" font-size="11.5" font-weight="700" fill="#0a5fb4">◀ Operational simplicity / global reach</text>
+    <text x="1140" y="356" text-anchor="end" font-size="11.5" font-weight="700" fill="#a81d13">Data sovereignty / control ▶</text>
+    <text x="590" y="395" text-anchor="middle" font-size="11.5" fill="#555">Identical policy, agent (FortiClient), management (FortiManager) &amp; intelligence (FortiGuard) across all three — only the <tspan font-weight="700">hosting location &amp; operator</tspan> change.</text>
+  </svg>
+  <div class="cap">Figure 5 — Sovereign SASE spectrum: the same FortiOS stack, hosted Fortinet-side, by a local provider, or fully self-hosted.</div>
+  <div class="legend">
+    <span><i style="background:#0a5fb4"></i>Convenience-first (Fortinet-hosted)</span>
+    <span><i style="background:#6a3fb4"></i>In-country managed (SP-hosted)</span>
+    <span><i style="background:#da291c"></i>Full control (self-hosted)</span>
+  </div>
+  </div>
+
+  <h3 class="sub">What you control with Sovereign SASE</h3>
+  <div class="grid g3">
+    <div class="card"><h4>🗺️ Data residency</h4><p>Traffic, logs and metadata stay in your chosen country/region — meeting localization mandates and avoiding cross-border data transfer.</p></div>
+    <div class="card"><h4>🏛️ Infrastructure ownership</h4><p>Choose who owns and operates the PoP — Fortinet, a vetted local provider, or your own team on your own hardware/cloud.</p></div>
+    <div class="card"><h4>🔑 Keys &amp; inspection points</h4><p>Retain control of encryption keys and where SSL/TLS decryption and inspection occur — no third party sees cleartext.</p></div>
+    <div class="card"><h4>📜 Regulatory compliance</h4><p>Satisfy GDPR, national data laws, defense and critical-infrastructure mandates with auditable, in-jurisdiction enforcement.</p></div>
+    <div class="card"><h4>🧠 Threat-intel control</h4><p>Use FortiGuard, local feeds, or a hybrid — and govern exactly what telemetry (if any) leaves your environment.</p></div>
+    <div class="card"><h4>🔒 Air-gap capable</h4><p>Self-hosted mode supports isolated/offline environments for the most sensitive networks (defense, OT, intelligence).</p></div>
+  </div>
+
+  <h3 class="sub">Standard cloud SASE vs Sovereign SASE</h3>
+  <table>
+    <thead><tr><th style="width:220px">Aspect</th><th>Standard Cloud SASE</th><th>Sovereign SASE</th></tr></thead>
+    <tbody>
+      <tr><td><b>Where data resides</b></td><td>Vendor cloud, vendor-chosen regions</td><td>Chosen jurisdiction or on your own infrastructure</td></tr>
+      <tr><td><b>Who operates the PoP</b></td><td>Fortinet</td><td>Local service provider <i>or</i> the organization itself</td></tr>
+      <tr><td><b>Encryption keys / inspection</b></td><td>Managed in vendor cloud</td><td>Retained &amp; controlled by you</td></tr>
+      <tr><td><b>Compliance fit</b></td><td>General commercial use</td><td>Government, defense, regulated, data-localization laws</td></tr>
+      <tr><td><b>Operational overhead</b></td><td>Lowest (fully managed)</td><td>Higher for self-host; moderate for SP-managed</td></tr>
+      <tr><td><b>Global scale &amp; speed</b></td><td>Highest (instant global PoPs)</td><td>Scoped to chosen locations/infrastructure</td></tr>
+      <tr><td><b>Air-gap / isolated networks</b></td><td>Not supported</td><td>Supported (self-hosted)</td></tr>
+    </tbody>
+  </table>
+
+  <h3 class="sub">Who needs Sovereign SASE</h3>
+  <p>
+    <span class="chip c-red">Government &amp; public sector</span>
+    <span class="chip c-pur">Defense &amp; intelligence</span>
+    <span class="chip c-blue">Critical infrastructure (energy · utilities · telecom)</span>
+    <span class="chip c-amber">Regulated finance &amp; healthcare with residency mandates</span>
+    <span class="chip c-green">Data-localization jurisdictions (EU · Gulf/ME · APAC)</span>
+    <span class="chip c-teal">Telcos / MSSPs offering in-country "SASE-as-a-service"</span>
+  </p>
+  <div class="note"><b>Commercial note:</b> Sovereign SASE generally keeps the same <b>per-user subscription</b> model, plus the relevant deployment component — <b>self-hosted infrastructure costs</b> (compute/licensing for the org-run stack) for the full-sovereign model, or a <b>local provider's managed fee</b> for the service-provider-hosted model. Validate the exact SKU and hosting arrangement with Fortinet or the regional provider.</div>
+</section>
+
+<!-- 8 FEATURES -->
 <section id="features">
-  <h2 class="sec"><span class="n">7</span>Feature &amp; Capability Matrix</h2>
+  <h2 class="sec"><span class="n">8</span>Feature &amp; Capability Matrix</h2>
   <p class="lead">Which capabilities live in which part of the solution, and how they map to the SSE/SASE framework.</p>
   <table>
     <thead><tr><th>Capability</th><th>Delivered by</th><th>SASE pillar</th><th>Notes</th></tr></thead>
@@ -470,7 +582,7 @@
 
 <!-- 8 LICENSING -->
 <section id="licensing">
-  <h2 class="sec"><span class="n">8</span>Licensing Model</h2>
+  <h2 class="sec"><span class="n">9</span>Licensing Model</h2>
   <p class="lead">FortiSASE is licensed as a <b>per-user, annual subscription</b> sold in user-count tiers. The base subscription bundles the SSE security stack; capacity, sites and dedicated resources are add-ons.</p>
 
   <div class="diagram">
@@ -513,7 +625,7 @@
       <text x="780" y="272">• <tspan font-weight="700">Premium / Elite FortiCare</tspan> support upgrade</text>
     </g>
   </svg>
-  <div class="cap">Figure 5 — Licensing = base per-user subscription × edition tier + capacity/site add-ons.</div>
+  <div class="cap">Figure 6 — Licensing = base per-user subscription × edition tier + capacity/site add-ons.</div>
   </div>
 
   <h3 class="sub">User-Count Tiers (illustrative)</h3>
@@ -536,7 +648,7 @@
 
 <!-- 9 COSTING -->
 <section id="costing">
-  <h2 class="sec"><span class="n">9</span>Costing Model</h2>
+  <h2 class="sec"><span class="n">10</span>Costing Model</h2>
   <p class="lead">Total cost = (per-user subscription × users × term) + site/bandwidth add-ons + FortiGate hub hardware &amp; bundles + optional premium support &amp; PS. Below are <b>illustrative list ranges for modelling only</b> — real pricing depends on tier, term, volume discount and region. Always validate with a Fortinet quote.</p>
 
   <table>
@@ -572,7 +684,7 @@
 
 <!-- 10 USE CASES -->
 <section id="usecases">
-  <h2 class="sec"><span class="n">10</span>Core Use Cases</h2>
+  <h2 class="sec"><span class="n">11</span>Core Use Cases</h2>
   <div class="grid g2">
     <div class="card"><h4>🏠 Secure the hybrid workforce</h4><p>Replace legacy VPN with FortiClient + ZTNA. Users get fast, inspected access to internet, SaaS and private apps from anywhere — with continuous posture checks.</p><span class="chip c-red">SWG</span><span class="chip c-pur">ZTNA</span><span class="chip c-green">FortiClient</span></div>
     <div class="card"><h4>🏪 Thin-edge branch / retail</h4><p>Onboard small sites with FortiAP/FortiGate tunnels to the nearest PoP — no full security stack per store. Consistent policy, central management.</p><span class="chip c-blue">Thin-Edge</span><span class="chip c-red">FWaaS</span></div>
@@ -585,7 +697,7 @@
 
 <!-- 11 INDUSTRIES -->
 <section id="industries">
-  <h2 class="sec"><span class="n">11</span>Industry Integration Blueprints</h2>
+  <h2 class="sec"><span class="n">12</span>Industry Integration Blueprints</h2>
   <p class="lead">How the same portfolio is assembled differently per industry — the products are identical; the emphasis and connectivity pattern change.</p>
 
   <!-- industry diagram -->
@@ -619,7 +731,7 @@
       <rect x="40" y="55" width="290" height="70" rx="9" fill="#fff5f4" stroke="#da291c"/><text x="185" y="80" font-weight="700" fill="#a81d13">Tech / SaaS-first</text><text x="185" y="100" fill="#555">Full ZTNA · CASB · DEM · cloud IaaS hub</text><text x="185" y="116" fill="#555">remote-first, no MPLS</text>
     </g>
   </svg>
-  <div class="cap">Figure 6 — The same products, emphasized differently across six industry patterns.</div>
+  <div class="cap">Figure 7 — The same products, emphasized differently across six industry patterns.</div>
   </div>
 
   <table>
@@ -645,7 +757,7 @@
 
 <!-- 12 SUMMARY -->
 <section id="summary">
-  <h2 class="sec"><span class="n">12</span>Summary &amp; Glossary</h2>
+  <h2 class="sec"><span class="n">13</span>Summary &amp; Glossary</h2>
   <div class="note ok"><b>The one-paragraph summary:</b> Fortinet Unified SASE converges Secure SD-WAN and a cloud-delivered SSE (FWaaS, SWG, ZTNA, CASB, DLP, IPS, sandbox, DEM) on a single OS (FortiOS), single agent (FortiClient), single management plane and single threat-intel source (FortiGuard). Users and sites connect to the nearest PoP via SIA, SPA and Secure SaaS Access; private apps are reached through a FortiGate SD-WAN hub or ZTNA proxy. It's licensed per user, per year, with site &amp; bandwidth add-ons — shifting security spend from per-site CapEx to predictable OpEx while consolidating multiple point-products into one vendor.</div>
 
   <h3 class="sub">Glossary</h3>
@@ -656,6 +768,7 @@
       <tr><td><b>SSE</b></td><td>Security Service Edge — the security half of SASE (SWG, CASB, ZTNA, FWaaS)</td></tr>
       <tr><td><b>SIA</b></td><td>Secure Internet Access — inspected internet/web egress from the PoP</td></tr>
       <tr><td><b>SPA</b></td><td>Secure Private Access — reaching private apps via ZTNA / SD-WAN</td></tr>
+      <tr><td><b>Sovereign SASE</b></td><td>SASE deployed under your control — hosted in-jurisdiction by a local provider or fully self-hosted — so data, logs &amp; keys never leave the chosen jurisdiction</td></tr>
       <tr><td><b>PoP</b></td><td>Point of Presence — a Fortinet cloud location running the FortiOS security stack</td></tr>
       <tr><td><b>ZTNA</b></td><td>Zero Trust Network Access — per-app, identity- &amp; posture-aware access</td></tr>
       <tr><td><b>CASB</b></td><td>Cloud Access Security Broker — SaaS visibility &amp; control (inline + API)</td></tr>
