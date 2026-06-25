@@ -7,6 +7,12 @@
 
 > Click the link above to open the rendered report. (Opening `index.html` *inside the GitHub repo view* shows the raw source code — that's normal; use the GitHub Pages link above to see the live, formatted page.)
 
+![Page views](https://api.visitorbadge.io/api/visitors?path=asad4ntrp2.fortinet-sase&label=Page%20views&labelColor=%2315181d&countColor=%23da291c&style=flat)
+&nbsp;![Pages](https://img.shields.io/badge/GitHub%20Pages-live-1e8a4c?style=flat)
+&nbsp;![Single file](https://img.shields.io/badge/format-single--file%20HTML-da291c?style=flat)
+
+> 📊 **Visitor counter:** the live page footer shows a running **"Page views"** count via [VisitorBadge.io](https://www.visitorbadge.io/) — no signup, no tracking cookies. The same badge appears above.
+
 ---
 
 ## 📌 Briefing
@@ -91,6 +97,22 @@ cd fortinet-sase
 - **What is CASB?** — https://www.fortinet.com/resources/cyberglossary/casb
 
 > All reference links were verified as reachable at the time of publishing.
+
+---
+
+## 🗂️ Project status
+
+**Status:** ✅ Published & live · GitHub Pages enabled · visitor counter active.
+
+| Item | State |
+|------|-------|
+| Single-page report (`index.html`) | ✅ 13 sections, 7 inline-SVG diagrams |
+| Sovereign SASE section | ✅ Added (deployment-spectrum diagram) |
+| GitHub Pages | ✅ Live at the URL above |
+| Visitor counter | ✅ VisitorBadge.io in footer |
+| README + references | ✅ Current (links verified) |
+
+See **[CHANGELOG.md](CHANGELOG.md)** for the full version history.
 
 ---
 
